@@ -1,0 +1,71 @@
+{
+  "name": "react-self-focused",
+  "version": "0.2.1",
+  "description": "make a react application screen reader friendly",
+  "keywords": [
+    "react",
+    "component",
+    "a11y",
+    "accessibility",
+    "spa",
+    "single page application"
+  ],
+  "main": "build/self-focused.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:linkedin/self-focused.git"
+  },
+  "license": "BSD-2-Clause",
+  "author": "Sarbbottam Bandyopadhyay",
+  "scripts": {
+    "prebuild": "rimraf build",
+    "build": "babel --out-dir build src",
+    "start": "webpack-dev-server --content-base=example",
+    "lint": "xo",
+    "test": "npm run lint && mocha --require babel-register test/*.test.js",
+    "preversion": "npm run build"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint-config-xo-react": "^0.17.0",
+    "eslint-plugin-react": "^7.10.0",
+    "jsdom": "^12.2.0",
+    "mocha": "^5.2.0",
+    "raf": "^3.4.0",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "rimraf": "^2.6.2",
+    "sinon": "^7.0.0",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.10",
+    "xo": "^0.23.0"
+  },
+  "xo": {
+    "extends": "xo-react",
+    "envs": [
+      "mocha",
+      "browser"
+    ],
+    "esnext": true,
+    "space": true,
+    "rules": {
+      "linebreak-style": 0
+    },
+    "ignores": [
+      "build",
+      "example/index.js"
+    ]
+  }
+}
